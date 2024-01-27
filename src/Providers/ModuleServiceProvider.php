@@ -3,6 +3,7 @@
 namespace Eclipse\ModuleTemplate\Providers;
 
 use Eclipse\Core\Framework\Output\Menu;
+use Eclipse\ModuleTemplate\Console\Commands\TestCommand;
 use Exception;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -26,6 +27,10 @@ class ModuleServiceProvider extends ServiceProvider
             $section->addItem(new Menu\Item(_('Test view'), url('module-template/test')));
 
             $menu->after(url('users'))->addItem($section);
+        } else {
+            $this->commands([
+                TestCommand::class,
+            ]);
         }
     }
 }
