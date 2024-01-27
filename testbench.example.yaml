@@ -1,0 +1,7 @@
+# -------------------------------------
+# Testbench configuration file example
+# -------------------------------------
+env:
+  - APP_ENV=local
+workbench:
+  install: false
