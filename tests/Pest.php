@@ -1,5 +1,7 @@
 <?php
 
+use Eclipse\Core\Foundation\Testing\PackageTestCase;
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -11,7 +13,7 @@
 |
 */
 
-// uses(Tests\TestCase::class)->in('Feature');
+uses(PackageTestCase::class)->in('Feature');
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +26,9 @@
 |
 */
 
-expect()->extend('toBeOne', function () {
-    return $this->toBe(1);
-});
+//expect()->extend('toBeOne', function () {
+//    return $this->toBe(1);
+//});
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +41,7 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
-{
-    // ..
-}
+//function something()
+//{
+//    // ..
+//}
