@@ -1,11 +1,11 @@
 {
-    "name": "datalinx/php-package-template",
-    "description": "PHP package template",
+    "name": "eclipseapp/module-template",
+    "description": "Eclipse module template",
     "keywords": [
         "php",
         "template"
     ],
-    "homepage": "https://github.com/datalinx/php-package-template",
+    "homepage": "https://github.com/datalinx/eclipse-module-template",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -18,28 +18,48 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true
-        }
+        },
+        "optimize-autoloader": true
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "DataLinx\\PhpPackageTemplate\\": "src/"
+            "Eclipse\\ModuleTemplate\\": "src/",
+            "Eclipse\\ModuleTemplate\\Database\\Factories\\": "database/factories/",
+            "Eclipse\\ModuleTemplate\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "DataLinx\\PhpPackageTemplate\\Tests\\": "tests/"
+            "Tests\\": "tests/"
         }
     },
     "require": {
-        "php": ">=8.1"
+        "php": ">=8.2",
+        "eclipseapp/core": "dev-master",
+        "ext-gettext": "*"
     },
     "require-dev": {
+        "eclipseapp/skeleton": "dev-master",
+        "fakerphp/faker": "^1.23",
         "laravel/pint": "^1.13",
-        "pestphp/pest": "^2.24"
+        "orchestra/testbench": "^8.21",
+        "pestphp/pest": "^2.31"
     },
     "scripts": {
         "format": "vendor/bin/pint",
         "test": "vendor/bin/pest"
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [],
+            "providers": [
+                "Eclipse\\ModuleTemplate\\Providers\\ModuleServiceProvider"
+            ]
+        },
+        "eclipse": {
+            "type": "module"
+        }
     }
 }
