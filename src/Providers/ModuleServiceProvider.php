@@ -4,9 +4,11 @@ namespace Eclipse\ModuleTemplate\Providers;
 
 use Eclipse\Core\Framework\Output\Menu;
 use Eclipse\ModuleTemplate\Console\Commands\TestCommand;
+use Eclipse\ModuleTemplate\Livewire\MyCounter;
 use Exception;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
 class ModuleServiceProvider extends ServiceProvider
 {
@@ -21,6 +23,8 @@ class ModuleServiceProvider extends ServiceProvider
         Route::middleware('web')->prefix('module-template')->group(function () {
             $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
         });
+
+        Livewire::component('my-counter', MyCounter::class);
 
         if (! $this->app->runningInConsole()) {
             $section = new Menu\Section(_('Module template'), null, 'module-template');

@@ -9,7 +9,11 @@
 
         <p>This is just a test view.</p>
 
-        <p>Also, say hello to my little friend:</p>
+        <p>Here's a Livewire component:</p>
+
+        <livewire:my-counter/>
+
+        <p class="mt-5">Also, say hello to my little friend:</p>
 
         <img src="{{ Module::asset('img/penguin.png') }}" alt="" class="penguin"/>
 
