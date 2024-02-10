@@ -9,6 +9,6 @@ class TestController extends AbstractController
 {
     public function index(): Renderable
     {
-        return view('test::test.index');
+        return view('module-template::test.index');
     }
 }

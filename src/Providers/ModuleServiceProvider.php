@@ -15,7 +15,7 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function boot(Menu $menu): void
     {
-        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'test');
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'module-template');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
 
         Route::middleware('web')->prefix('module-template')->group(function () {
